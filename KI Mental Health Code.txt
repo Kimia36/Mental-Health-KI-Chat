@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental Health KI Chat</title>
+  
+  <!-- Google Font einbinden -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Alegreya Sans SC', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f8ff;
+      height: 100vh;
+      color: #000;
+    }
+
+
+    #app {
+      width: 90%;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+
+    .paragraph {
+      font-size: 16px;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px 0;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #58d68d;
+      color: black;
+    }
+
+
+    button:hover {
+      background-color: #00e6a1;
+    }
+
+
+    #chat, #resources, #about {
+      display: none;
+    }
+
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="welcome">
+      <div class="title">Mental Health KI Chat</div>
+      <p class="paragraph">
+       Dein digitaler Zuhörer für ein besseres Wohlbefinden.
+      </p>
+      <button onclick="showScreen('about')">Über uns</button>
+      <button onclick="showScreen('chat')">Chat starten</button>
+      <button onclick="showScreen('resources')">Ressourcen anzeigen</button>
+    </div>
+
+
+    <div id="about">
+      <div class="title">Über uns</div>
+      <p class="paragraph">
+      dhgeuwshsh uegrurhrhrv hrhvrurbrubrrh jdbeiendiebtsjlgdlgdxhddgddgggdddkkddxtijtstsjdkt jfxkfx gdmgxmxgxgdjtsitskt    ojtesttydd
+     </p>
+      <p class="paragraph">
+      jshehwjsveuendhhekwiwnwo iebdueheye uegr ruezfktdktro6ro6roryoydkydkydkydkyd!$¡¡$$^¡¡'kgkftxttxtooott
+      </p>
+      <p class="paragraph">
+        Mental Health KI Chat ist wie ein aufmerksamer Freund, der immer bereit ist zuzuhören.
+         </p>
+        <p class="paragraph"> 
+         Mit einem klugen KI-Chatbot bietet sie eine Plattform, auf der man offen über seine Gedanken und Gefühle plaudern kann, ohne sich dabei beobachtet zu fühlen.
+      </p>
+      <p class="paragraph">
+        Egal, ob man Informationen über mentale Gesundheit sucht, emotionale Unterstützung braucht oder einfach nur jemanden braucht, der zuhört – diese App ist wie eine Oase der Ruhe im hektischen Alltag. Man kann mit dem Chatbot über Stress, Angst oder gar über die tiefen Fragen des Lebens sprechen, ganz ungeniert und in einer sicheren, anonymen Umgebung. Und falls einem der Sinn danach steht, kann man auch praktische Tipps erhalten, um ein bisschen besser mit den täglichen Herausforderungen umzugehen.
+      </p>
+      <p class="paragraph">
+        Aber das ist noch nicht alles. Die App hat auch eine Liste von wichtigen Ressourcen parat. Hier findet man Notfallnummern, Links zu Hilfsangeboten und Kontakte zu Beratungsstellen – alles, um im Notfall schnell Unterstützung zu bekommen. So hat man stets einen Plan B in der Tasche.
+      </p>
+      <p class="paragraph">
+        Das übergeordnete Ziel dieser App ist es, mentale Gesundheit für jedermann zugänglicher zu machen. Mental Health KI Chat ist ein guter Begleiter für all jene, die sich um ihr Wohlbefinden kümmern möchten. Sie ersetzt sicherlich keine professionelle Therapie, ist aber eine angenehme Ergänzung, die stets zur Verfügung steht.
+      </p>
+      <p class="paragraph">
+        Wenn du also auf der Suche nach einer vertrauensvollen Möglichkeit bist, der eigenen mentalen Gesundheit etwas Gutes zu tun, dann ist Mental Health KI Chat der richtige Ort für dich. Probier es aus und erlebe, wie es dir helfen kann, Tag für Tag ein kleines Stück besser zu fühlen – Schritt für Schritt.
+      </p>
+      <button onclick="showScreen('welcome')">Zurück zum Start</button>
+    </div>
+
+
+    <div id="chat">
+      <div class="title">Chat</div>
+      <div id="messages"></div>
+      <div id="inputContainer">
+        <input type="text" id="userInput" placeholder="Schreib hier...">
+        <button onclick="sendMessage()">Senden</button>
+      </div>
+      <button onclick="showScreen('welcome')">Zurück zum Start</button>
+    </div>
+
+
+    <div id="resources">
+      <div class="title">Ressourcen</div>
+      <ul>
+        <li><strong>Notfallnummer:</strong> +34 024</li>
+        <li><strong>Telefonseelsorge:</strong> 0800 111 0 111</li>
+        <li><strong>Externe Hilfe:</strong>  Physchologen, ...</li>
+        <li><strong>Tips:</strong> Meditieren, in Bewegung bleiben (Sport), frische Luft atmen.
+      </ul>
+      <button onclick="showScreen('welcome')">Zurück zum Start</button>
+    </div>
+  </div>
+
+
+  <script>
+    function showScreen(screen) {
+      document.getElementById("welcome").style.display = screen === "welcome" ? "block" : "none";
+      document.getElementById("about").style.display = screen === "about" ? "block" : "none";
+      document.getElementById("chat").style.display = screen === "chat" ? "block" : "none";
+      document.getElementById("resources").style.display = screen === "resources" ? "block" : "none";
+    }
+
+
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const messages = document.getElementById("messages");
+
+
+      if (!input.value.trim()) return;
+
+
+      const userMessage = document.createElement("div");
+      userMessage.textContent = input.value;
+      messages.appendChild(userMessage);
+
+
+      const botMessage = document.createElement("div");
+      botMessage.textContent = "Es ist sehr mutig, dass du das ansprichst, und das zeigt, dass du etwas ändern möchtest. Magst du mir erzählen, was genau dich dazu bringt, das zu denken? Wie fühlst du dich in deinem Alltag, und wie lange geht das schon so? Gemeinsam können wir herausfinden, was dir hilft, und schauen, welche Schritte wir gehen können, um dich zu entlasten. Du bist nicht allein, und es gibt Wege, aus diesem Tief herauszukommen. Wenn du glaubst, an einer Depression zu leiden, beginne mit kleinen Schritten: Schaffe Struktur im Alltag, sprich mit jemandem, dem du vertraust, und suche professionelle Hilfe bei einem Arzt oder Therapeuten. Bewegung, ein geregelter Schlaf und achtsame Pausen können ebenfalls helfen. Wenn es sehr schlimm wird, wende dich an eine Krisenhotline wie die Telefonseelsorge (0800 111 0 111). Du bist nicht allein, und es gibt Wege, dich besser zu fühlen.";
+
+
+      messages.appendChild(botMessage);
+
+
+      input.value = "";
+    }
+  </script>
+</body>
+</html> ‎<Diese Nachricht wurde bearbeitet.>
